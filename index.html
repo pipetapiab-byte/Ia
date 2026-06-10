@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Repositorio Ia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📊 Dashboard del Repositorio</h1>
+                <p class="subtitle">Información Dinámica en Tiempo Real</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Cargando información del repositorio...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error" class="error-message" style="display: none;"></div>
+
+            <!-- Repository Info Section -->
+            <section id="repoInfo" class="section repo-info-section" style="display: none;">
+                <h2>📁 Información del Repositorio</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <span class="label">Nombre</span>
+                        <span id="repoName" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Propietario</span>
+                        <span id="repoOwner" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Descripción</span>
+                        <span id="repoDescription" class="value">-</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Rama Principal</span>
+                        <span id="repoBranch" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">⭐ Stars</span>
+                        <span id="repoStars" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">👁️ Watchers</span>
+                        <span id="repoWatchers" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">🍴 Forks</span>
+                        <span id="repoForks" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">📋 Issues Abiertos</span>
+                        <span id="repoIssues" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Tamaño (KB)</span>
+                        <span id="repoSize" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Estado</span>
+                        <span id="repoStatus" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Privacidad</span>
+                        <span id="repoPrivacy" class="value"></span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Último Push</span>
+                        <span id="repoLastPush" class="value"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section id="statsSection" class="section stats-section" style="display: none;">
+                <h2>📈 Estadísticas</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-icon">🔤</div>
+                        <div class="stat-content">
+                            <p class="stat-number" id="statLanguages">0</p>
+                            <p class="stat-label">Lenguajes</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <p class="stat-number" id="statFeatures">5</p>
+                            <p class="stat-label">Características</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-content">
+                            <p class="stat-number" id="statMergeOptions">3</p>
+                            <p class="stat-label">Opciones de Merge</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages Section -->
+            <section id="languagesSection" class="section languages-section" style="display: none;">
+                <h2>🗣️ Lenguajes de Programación</h2>
+                <div id="languagesContainer" class="languages-container">
+                    <p class="no-data">No hay datos de lenguajes disponibles</p>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="featuresSection" class="section features-section" style="display: none;">
+                <h2>✨ Características Habilitadas</h2>
+                <div class="features-grid" id="featuresGrid"></div>
+            </section>
+
+            <!-- Links Section -->
+            <section id="linksSection" class="section links-section" style="display: none;">
+                <h2>🔗 Enlaces</h2>
+                <div class="links-grid">
+                    <a id="repoLink" href="#" target="_blank" class="link-button">
+                        <span>🌐</span> Ver en GitHub
+                    </a>
+                    <a id="ownerLink" href="#" target="_blank" class="link-button">
+                        <span>👤</span> Perfil del Propietario
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Dashboard dinámico creado con JavaScript • Datos en tiempo real desde GitHub API</p>
+            <p id="lastUpdated" class="last-updated"></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
